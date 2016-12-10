@@ -1,7 +1,6 @@
 package seng301.assn4;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -45,13 +44,14 @@ public class CashPaymentModule implements PaymentModule, CoinSlotListener {
 	}
 	
 	@Override
-	public void makePurchase(int totalCost) {
+	public int makePurchase(int totalCost) {
 		try{
-			int change = funds.processPayment(totalCost);
-			dispenseChange(change);
+			return funds.processPayment(totalCost);
+			//dispenseChange(change);
 		} catch (NotEnoughMoneyException e){
 			// TODO NOTIFY USER THAT HE DOES NOT HAVE ENOUGH MONEY!!!!
 		}
+		return -1;
 	}
 
 	/**

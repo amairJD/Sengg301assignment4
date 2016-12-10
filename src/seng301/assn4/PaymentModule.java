@@ -9,8 +9,9 @@ public interface PaymentModule {
 	 * can be used for purchase. 
 	 * 
 	 * @param totalPayment is the total value of the payment in int
+	 * @return total value of change required in INT
 	 */
-	public abstract void makePurchase(int totalPayment);
+	public abstract int makePurchase(int totalPayment);
 	
 	/**
 	 * Inserts money into available funds, that can be used for a purchase
@@ -22,4 +23,7 @@ public interface PaymentModule {
 	 * Checks available funds and returns it as an int value
 	 */
 	public abstract int checkFunds();
+	
+
+	
 }
